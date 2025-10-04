@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /health
 
 # Host
 Host: https://expense-flow.vercel.app

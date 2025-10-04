@@ -3,12 +3,13 @@ module.exports = {
   siteUrl: 'https://expense-flow.vercel.app',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ['/api/*'],
+  exclude: ['/api/*', '/health'],
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/health'],
       },
     ],
   },

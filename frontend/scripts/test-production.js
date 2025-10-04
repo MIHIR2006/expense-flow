@@ -38,28 +38,23 @@ function checkServerHealth() {
 
 function checkHealthEndpoint() {
   return new Promise((resolve, reject) => {
-    const req = http.get(`http://localhost:${PORT}/api/health`, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const health = JSON.parse(data);
-          console.log('✅ Health endpoint is working:', health);
-          resolve(true);
-        } catch (err) {
-          console.log('⚠️  Health endpoint returned invalid JSON');
-          resolve(false);
-        }
-      });
+    const req = http.get(`http://localhost:${PORT}/health`, (res) => {
+      if (res.statusCode === 200) {
+        console.log('✅ Health page is accessible');
+        resolve(true);
+      } else {
+        console.log(`⚠️  Health page returned status ${res.statusCode}`);
+        resolve(false);
+      }
     });
 
     req.on('error', () => {
-      console.log('⚠️  Health endpoint not available (this is optional)');
+      console.log('⚠️  Health page not available (this is optional)');
       resolve(false);
     });
 
     req.setTimeout(3000, () => {
-      console.log('⚠️  Health endpoint request timed out');
+      console.log('⚠️  Health page request timed out');
       resolve(false);
     });
   });
