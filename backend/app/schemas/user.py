@@ -1,42 +1,24 @@
 """
 Pydantic schemas for User model.
 """
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
 from typing import Optional
 
 
-class UserBase(BaseModel):
-    """Base user schema."""
+class UserCreate(BaseModel):
+    name: str = Field(..., min_length=3, max_length=50)
     email: EmailStr
-    username: str
-    full_name: Optional[str] = None
+    # password: str = Field(..., min_length=6)
 
-
-class UserCreate(UserBase):
-    """Schema for creating a user."""
+class UserLogin(BaseModel):
+    email: EmailStr
     password: str
 
-
-class UserUpdate(BaseModel):
-    """Schema for updating a user."""
-    email: Optional[EmailStr] = None
-    username: Optional[str] = None
-    full_name: Optional[str] = None
-    password: Optional[str] = None
-
-
-class UserInDB(UserBase):
-    """Schema for user in database."""
+class UserResponse(BaseModel):
     id: int
-    is_active: bool
-    created_at: datetime
-    updated_at: Optional[datetime] = None
-    
+    name: str
+    email: EmailStr
+
     class Config:
-        from_attributes = True
-
-
-class User(UserInDB):
-    """Schema for user response."""
-    pass
+        orm_mode = True
