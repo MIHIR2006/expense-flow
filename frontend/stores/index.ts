@@ -1,7 +1,9 @@
 // Store exports for easy importing
-export { default as useAuthStore } from './auth';
-export { default as useExpenseStore } from './expense';
-export { default as useUIStore } from './ui';
+import useAuthStore from './auth';
+import useExpenseStore from './expense';
+import useUIStore from './ui';
+
+export { useAuthStore, useExpenseStore, useUIStore };
 
 // Re-export types for convenience
 export type { AuthActions, AuthState, AuthStore, User } from './auth';

@@ -203,7 +203,9 @@ export const ExpenseListExample = () => {
               <Checkbox
                 checked={isAllSelected}
                 ref={(el) => {
-                  if (el) el.indeterminate = isPartiallySelected;
+                  if (el && 'indeterminate' in el) {
+                    (el as any).indeterminate = isPartiallySelected;
+                  }
                 }}
                 onCheckedChange={(checked) => {
                   if (checked) {

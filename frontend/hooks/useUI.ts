@@ -104,6 +104,10 @@ export const useNotifications = () => {
     addInfoNotification,
     removeNotification,
     clearNotifications,
+    showSuccess,
+    showError,
+    showWarning,
+    showInfo,
   };
 };
 
