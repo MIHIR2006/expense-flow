@@ -56,7 +56,6 @@ export default function Logo({
           style={{
             imageRendering: 'crisp-edges',
             WebkitImageRendering: 'crisp-edges',
-            imageRendering: 'high-quality',
           }}
           quality={100}
           priority
