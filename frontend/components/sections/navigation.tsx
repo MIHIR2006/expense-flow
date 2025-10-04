@@ -73,11 +73,12 @@ export default function Navigation() {
             <Button
               variant="ghost"
               className="text-white/70 hover:bg-white/10 hover:text-white"
+              asChild
             >
-              Sign In
+              <a href="/login">Sign In</a>
             </Button>
-            <Button className="bg-gradient-to-r from-purple-600 to-blue-600 transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
-              Get Started
+            <Button className="bg-gradient-to-r from-purple-600 to-blue-600 transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50" asChild>
+              <a href="/signup">Get Started</a>
             </Button>
           </motion.div>
 
@@ -113,11 +114,12 @@ export default function Navigation() {
                 <Button
                   variant="ghost"
                   className="w-full justify-start text-white/70 hover:bg-white/10 hover:text-white"
+                  asChild
                 >
-                  Sign In
+                  <a href="/login">Sign In</a>
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600">
-                  Get Started
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600" asChild>
+                  <a href="/signup">Get Started</a>
                 </Button>
               </div>
             </div>
