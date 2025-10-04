@@ -55,7 +55,6 @@ export default function Logo({
           className={`${sizeClasses[size]} rounded-full object-cover shadow-lg`}
           style={{
             imageRendering: 'crisp-edges',
-            WebkitImageRendering: 'crisp-edges',
           }}
           quality={100}
           priority

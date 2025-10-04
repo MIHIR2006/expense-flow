@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://expense-flow.vercel.app
+
+# Sitemaps
 Sitemap: https://expense-flow.vercel.app/sitemap.xml
