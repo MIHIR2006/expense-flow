@@ -1,10 +1,9 @@
 "use client";
 
+import Particles from "@/components/magicui/particles";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
-import Particles from "@/components/magicui/particles";
-import TypingAnimation from "@/components/magicui/typing-animation";
-import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
@@ -36,11 +35,11 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          <TypingAnimation
-            text="Expense Management, Reimagined"
-            className="mb-6 text-5xl font-bold text-white md:text-7xl lg:text-8xl"
-            duration={80}
-          />
+          <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-lg">
+              Expense Management, Reimagined
+            </span>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

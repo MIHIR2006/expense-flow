@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import Logo from "@/components/ui/logo";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const footerLinks = {
   Product: [
@@ -53,11 +54,8 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-4"
           >
-            <div className="mb-6 flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-blue-600">
-                <span className="text-xl font-bold text-white">E</span>
-              </div>
-              <span className="text-xl font-bold text-white">ExpenseFlow</span>
+            <div className="mb-6">
+              <Logo size="md" showText={true} />
             </div>
             <p className="mb-6 text-sm text-white/60">
               The modern expense management platform built for teams of all

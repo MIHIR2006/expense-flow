@@ -1,9 +1,10 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import Logo from "@/components/ui/logo";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "Features", href: "#features" },
@@ -44,12 +45,8 @@ export default function Navigation() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-blue-600">
-              <span className="text-xl font-bold text-white">E</span>
-            </div>
-            <span className="text-xl font-bold text-white">ExpenseFlow</span>
+            <Logo size="md" showText={true} />
           </motion.div>
 
           <div className="hidden items-center gap-8 md:flex">
